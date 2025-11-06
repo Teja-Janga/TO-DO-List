@@ -1,0 +1,200 @@
+
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px #000;
+}
+
+.task-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 2px #000;
+}
+
+.task-item.completed {
+    background: #d4edda;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    outline: none;
+    border: 1px solid #666;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 340px;
+}
+
+select {
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+.add-btn {
+    background: hsl(220, 100%, 50%);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.complete-btn, .edit-btn, .delete-btn {
+    padding: 8px 15px;
+    color: #fff;
+}
+
+.complete-btn { background: #28a745; }
+.delete-btn { background: #dc3545; }
+.edit-btn { background: #007bff; }
+
+
+.clear-btn {
+    background-color: #222;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: all 0.4s;
+}
+
+.stats {
+    background: #5b95d3;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.priority-high { border-left: 5px solid #dc3545; }
+.priority-medium { border-left: 5px solid #ffc107; }
+.priority-low { border-left: 5px solid #28a745; }
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 280px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 30px;
+}
+input#editTaskInput, select#editPrioritySelect {
+    width: 100%;
+    margin: 8px 0;
+}
+button#saveEditBtn, button#cancelEditBtn {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.toggleButton {
+    margin-bottom: 10px;
+    background: #222;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 0 3px #000;
+    transition: all 0.4s;
+}
+
+body.dark-mode {
+    background: #333;
+    color: #fff;
+    box-shadow: 0 0 4px #fff;
+    transition: all 0.4s;
+}
+
+body.dark-mode .toggleButton {
+    background: #fff;
+    color: #000;
+    transition: all 0.4s;
+}
+
+body.dark-mode .clear-btn {
+    background: #fff;
+    color: #000;
+    transition: all 0.4s;
+}
+
+body.dark-mode .task-text {
+    color: #000;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 180px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 12px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    transition: visibility 0s, opacity 0.4s ease-in;
+    opacity: 0;
+}
+#snackbar.show {
+    visibility: visible;
+    opacity: 0.97;
+    transition: opacity 0.4s ease-in;
+}
+body.dark-mode #snackbar {
+    background: #eee;
+    color: #222;
+}
