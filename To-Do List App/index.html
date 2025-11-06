@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Delegation Mastery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="snackbar"></div>
+    <h1>🎯 Event Delegation Task Manager</h1>
+    <button id="toggleDarkMode" class="toggleButton">🌙 Dark Mode</button>
+
+    <div class="input-area">
+        <input type="text" id="taskInput" placeholder="Enter a new task...">
+        <select id="prioritySelect">
+            <option value="low">Low Priority</option>
+            <option value="medium" selected>Medium Priority</option>
+            <option value="high">High Priority</option>
+        </select>
+        <button class="add-btn" id="addTaskBtn">Add Task</button>
+    </div>
+
+    <div id="editModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="closeEditModal" class="close-btn">&times;</span>
+            <h3>Edit Task</h3>
+            <input type="text" id="editTaskInput" placeholder="Update task..." />
+            <select id="editPrioritySelect">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button id="saveEditBtn">Save</button>
+            <button id="cancelEditBtn">Cancel</button>
+        </div>
+    </div>
+
+
+    <div class="filter-area" style="margin: 10px 0;">
+        <label for="priorityFilter"><b>Filter by Priority:</b></label>
+        <select id="priorityFilter">
+            <option value="all">All</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+    </div>
+
+
+    <div class="stats" id="statsDisplay">
+        <strong>Total: 0 | Completed: 0 | High Priority: 0</strong>
+    </div>
+
+    <div id="tasksContainer">
+        <!-- Tasks will be dynamically added here -->
+    </div>
+    
+    <button class="clear-btn" id="clearAllBtn">Clear All</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
